@@ -19,3 +19,5 @@ jobs:
         java-version: 1.8
     - name: Maven Build
       run: mvn -B package --file pom.xml
+    - name: Deploy
+      run: curl -v -u admin:admin -T /home/runner/work/spring3-mvc-maven-xml-hello-world/spring3-mvc-maven-xml-hello-world/target/spring3-mvc-maven-xml-hello-world-1.0-SNAPSHOT.war 'ec2-65-1-147-62.ap-south-1.compute.amazonaws.com:8080/manager/text/deploy?path=/spring-web'
